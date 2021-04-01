@@ -1,0 +1,36 @@
+# http://phd.pp.ru/Software/dotfiles/init.py.html
+
+import os
+import sys
+
+if sys.hexversion >= 0x2040000:
+
+    import rlcompleter
+    import readline
+    import atexit
+
+    class irlcompleter(rlcompleter.Completer):
+        def complete(self, text, state):
+            if text == "":
+                return ['    ',None][state]
+            else:
+                return rlcompleter.Completer.complete(self,text,state)
+
+    readline.parse_and_bind("tab: complete")
+    readline.set_completer(irlcompleter().complete)
+    sys.stdout.write("TAB completer active\n")
+
+    histfile = os.path.expanduser("~/.python-history")
+    if os.path.isfile(histfile):
+        readline.read_history_file(histfile)
+        readline.set_history_length(100)
+    atexit.register(readline.write_history_file, histfile)
+
+    if sys.hexversion < 0x3000000:
+        import pprint
+        import __builtin__
+        def displayhook(value):
+            if value is not None:
+                __builtin__._ = value
+            pprint.pprint(value)
+        sys.displayhook = displayhook

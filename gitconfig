@@ -1,0 +1,25 @@
+[alias]
+        stat = status
+        co = checkout
+        ci = commit
+        br = branch
+        di = diff
+        q = log --decorate --graph  --date-order --abbrev-commit
+        qa = log --decorate --graph  --date-order --abbrev-commit --all
+[color]
+        branch = auto
+        diff = auto
+        status = auto
+        log = auto
+[user]
+        name = Marek Blaha
+        email = mblaha@redhat.com
+
+[push]
+        default = simple
+[core]
+        sharedrepository=group
+	editor = vim
+	excludesfile = /home/mblaha/.gitignore_global
+[submodule]
+	recurse = true
