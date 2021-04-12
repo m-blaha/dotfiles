@@ -61,3 +61,9 @@ function! PFormat()
 endfunction
 command -nargs=0 PF call PFormat()
 
+call plug#begin('~/.vim/plugged')
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer' }
+call plug#end()
+
+" YCM
+let g:ycm_confirm_extra_conf = 0
