@@ -67,3 +67,5 @@ call plug#end()
 
 " YCM
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_auto_hover = ''
+nmap <leader>\ <plug>(YCMHover)
