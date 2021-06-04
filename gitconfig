@@ -23,3 +23,5 @@
 	excludesfile = /home/mblaha/.gitignore_global
 [submodule]
 	recurse = true
+[rebase]
+	autosquash = true
