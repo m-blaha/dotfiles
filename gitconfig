@@ -19,9 +19,13 @@
         default = simple
 [core]
         sharedrepository=group
-	editor = vim
-	excludesfile = /home/mblaha/.gitignore_global
+        editor = vim
+        excludesfile = /home/mblaha/.gitignore_global
 [submodule]
-	recurse = true
+        recurse = true
 [rebase]
-	autosquash = true
+        autosquash = true
+
+[includeIf "gitdir:/redhat/*"]
+    [core]
+        sshCommand = "ssh -i ~/.ssh/id_ed25519_gitlab"
