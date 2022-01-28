@@ -1,0 +1,48 @@
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$memory_usage\
+$env_var\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$status\
+$character"""
+
+[[battery.display]]
+threshold = 25
+style = "bold red"
+
+[cmd_duration]
+min_time = 1000
+show_milliseconds = true
+
+[directory]
+truncation_length = 10
+#truncation_symbol = "…/"
+read_only = " 🔒"
+
+[env_var.PYTHONPATH]
+format = "PYTHONPATH=[$env_value]($style) "
+
+[env_var.LD_LIBRARY_PATH]
+format = "LD_LIBRARY_PATH=[$env_value]($style) "
+
+[shlvl]
+threshold = 1
+disabled = false
+
+[status]
+disabled = false
