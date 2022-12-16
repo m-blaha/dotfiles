@@ -20,3 +20,6 @@ Sessionx.vim
 
 # kdevelop
 *.kdev4
+
+# vs code
+c_cpp_properties.json
