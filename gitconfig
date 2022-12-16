@@ -2,7 +2,8 @@
         stat = status
         co = checkout
         ci = commit
-        br = branch
+        #br = branch -vv
+        br = branch --sort=-committerdate --format='%(HEAD) %(color:bold)%(color:red)%(refname:short)%(color:reset) %(color:blue)%(upstream:short) %(color:green)(%(committerdate:relative)) [%(authorname)]\n\t%(color:reset)%(subject)'
         di = diff
         q = log --decorate --graph  --date-order --abbrev-commit
         qa = log --decorate --graph  --date-order --abbrev-commit --all
